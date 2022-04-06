@@ -53,10 +53,10 @@ _이텔릭_
 
 # 이미지(Images)
 - 이미지 불러오기</br>
-![이미지](링크주소)  
+![블로그 프로필](https://media.vlpt.us/images/yeppi/profile/681653b9-42a4-4082-b945-7a2ab3ad64bc/%EB%B8%94%EB%A1%9C%EA%B7%B8%ED%94%84%EB%A1%9C%ED%95%84_%EB%B9%85%EC%8A%A4%EB%B9%84AR%EC%82%AC%EC%A7%84.png?w=240)  
 </br>
-- 이미지에 링크 바로 연결  
-[![이미지](링크주소)](링크주소)
+- 이미지에 링크 바로 연결</br>
+[![블로그 프로필과 링크](https://media.vlpt.us/images/yeppi/profile/681653b9-42a4-4082-b945-7a2ab3ad64bc/%EB%B8%94%EB%A1%9C%EA%B7%B8%ED%94%84%EB%A1%9C%ED%95%84_%EB%B9%85%EC%8A%A4%EB%B9%84AR%EC%82%AC%EC%A7%84.png?w=240)](https://media.vlpt.us/images/yeppi/profile/681653b9-42a4-4082-b945-7a2ab3ad64bc/%EB%B8%94%EB%A1%9C%EA%B7%B8%ED%94%84%EB%A1%9C%ED%95%84_%EB%B9%85%EC%8A%A4%EB%B9%84AR%EC%82%AC%EC%A7%84.png?w=240)
 
 # 인용문(BlockQuote)
 
