@@ -1,5 +1,5 @@
 package ch09;
-
+ 
 public class Point<T, V> {
 	T x;
 	V y;

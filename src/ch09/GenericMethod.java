@@ -2,7 +2,7 @@ package ch09;
 
 // 제네릭 클래스가 아니더라도, 제니릭 메소드 사용 가능
 public class GenericMethod {
-
+ 
 	public static <T, V> double makeRectangle(Point<T, V> p1, Point<T, V> p2) {
 		double left = ((Number)p1.getX()).doubleValue(); // double형으로 전부 변환
 		double right = ((Number)p2.getX()).doubleValue();
