@@ -1,5 +1,5 @@
 package ch07;
-
+ 
 public class GenericPrinter<T> {
 
 	private T material;

@@ -1,5 +1,5 @@
 package ch07;
-
+ 
 public class GenericPrinterTest {
 
 /*  Generic은 번거롭게 Object 타입으로 형변환 하지 않아도 된다.
