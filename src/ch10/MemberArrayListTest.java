@@ -3,7 +3,7 @@ package ch10;
 public class MemberArrayListTest {
 
 	public static void main(String[] args) {
- 
+  
 		MemberArrayList memberArrayList = new MemberArrayList();
 		
 		Member memberLee = new Member(1001, "ÀÌ¼ø½Å");
