@@ -1,7 +1,7 @@
 package ch11;
 
 public class MemberArrayListIteratorTest {
-
+ 
 	public static void main(String[] args) {
 
 		MemberArrayListIterator memberArrayListIterator = new MemberArrayListIterator();
