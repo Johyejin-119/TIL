@@ -1,5 +1,5 @@
 package ch08;
-
+ 
 public class GenericPrinter<T extends Material> { // T에 대한 제한
 
 	private T material;
