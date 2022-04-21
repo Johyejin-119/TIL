@@ -1,10 +1,14 @@
 package ch13;
 
+import java.util.Comparator;
+
 // id 별로 오름차순 정렬된 Tree
-public class Member implements Comparable<Member>{
+// implements Comparable<Member>
+public class Member implements Comparator<Member>{  
 	private int memberId; // 회원 아이디
 	private String memberName; // 회원 이름
 	
+	public Member() {} // Comparator 생성자
 	
 	public Member(int memberId, String memberName) { // 생성자
 		this.memberId = memberId;
@@ -77,6 +81,8 @@ public class Member implements Comparable<Member>{
 	 서로 비교하면서 오름차순 정렬되어 트리 구성
 	 
 	*/	
+		
+	/* Comparable 나와 비교하는 메소드
 	@Override
 	public int compareTo(Member member) {
 
@@ -90,5 +96,12 @@ public class Member implements Comparable<Member>{
 		// 위 코드 간단하게 오름차순/내림차순
 		// return (this.memberId - member.memberId);
 		// return (this.memberId - member.memberId) * (-1);
+	}
+*/
+
+	// Comparator 나와 비교대상과 비교하는 메소드
+	@Override
+	public int compare(Member member1, Member member2) {
+		return (member1.memberId - member2.memberId);
 	}
 }

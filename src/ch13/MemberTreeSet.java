@@ -8,7 +8,7 @@ public class MemberTreeSet {
 	private TreeSet<Member> treeSet;
 	
 	public MemberTreeSet() {
-		treeSet = new TreeSet<>();
+		treeSet = new TreeSet<Member>(new Member()); // Comparator은 <>,()안에 값을 넣어야한다
 	}	
 	
 	public void addMember(Member member) {
