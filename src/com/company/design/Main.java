@@ -3,6 +3,10 @@ package com.company.design;
 import com.company.design.adapter.*;
 import com.company.design.aop.AopBrowser;
 import com.company.design.decorator.*;
+import com.company.design.facade.Ftp;
+import com.company.design.facade.Reader;
+import com.company.design.facade.SftpClient;
+import com.company.design.facade.Writer;
 import com.company.design.observer.Button;
 import com.company.design.observer.IButtonListener;
 import com.company.design.proxy.Browser;
@@ -104,6 +108,7 @@ public class Main {
       */
 
      // Observer
+     /*
         // Listener 를 통해서 event 를 전달
         Button button = new Button("버튼");
         button.addListener(new IButtonListener() {
@@ -118,9 +123,33 @@ public class Main {
         button.click("메시지 전달 : click 3");
         button.click("메시지 전달 : click 4");
 
+      */
 
+     // Facade
+        Ftp ftpClient = new Ftp("www.foo.co.kr", 22, "/home/etc");
+        ftpClient.connect(); // FTP 연결
+        ftpClient.moveDirectory(); // 해당 디렉토리로 이동
 
+        Writer writer = new Writer("text.tmp");
+        writer.fileConnect(); // 해당 파일 연결
+        writer.write(); // 파일에 내용 쓰기
 
+        Reader reader = new Reader("text.tmp");
+        reader.fileConnect(); // 쓴 파일 읽기 위해 파일 연결
+        reader.fileRead(); // 파일 읽기
+
+        // 읽은 후, 연결 끊기
+        reader.fileDisconnect();
+        writer.fileDisconnect();
+        ftpClient.disConnect();
+
+        // 각각 다 method 호출해야하는 번거로움 + 각 객체의 의존성
+        // Facade 를 통해서, 한 번에 해결
+        SftpClient sftpClient = new SftpClient("www.foo.co.kr", 22, "/home/etc", "text.tmp");
+        sftpClient.connect();
+        sftpClient.write();
+        sftpClient.read();
+        sftpClient.disConnect();
     }
 
     // Adapter 콘센트 동작
