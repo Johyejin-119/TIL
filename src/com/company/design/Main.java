@@ -15,6 +15,7 @@ import com.company.design.proxy.IBrowser;
 import com.company.design.singleton.AClazz;
 import com.company.design.singleton.BClazz;
 import com.company.design.singleton.SocketClient;
+import com.company.design.strategy.*;
 
 import javax.swing.*;
 import java.util.concurrent.atomic.AtomicLong;
@@ -126,6 +127,7 @@ public class Main {
       */
 
      // Facade
+     /*
         Ftp ftpClient = new Ftp("www.foo.co.kr", 22, "/home/etc");
         ftpClient.connect(); // FTP 연결
         ftpClient.moveDirectory(); // 해당 디렉토리로 이동
@@ -150,6 +152,30 @@ public class Main {
         sftpClient.write();
         sftpClient.read();
         sftpClient.disConnect();
+      */
+
+     // Strategy
+        // Encoder 객체 자체는 달라지지 않고, 전략에 따라 각기 다른 결과 출력
+        Encoder encoder = new Encoder();
+
+        // 전략 세팅
+        EncodingStrategy base64 = new Base64Strategy();
+        EncodingStrategy normal = new NormalStrategy();
+
+        // 전략에 따른 결과 확인
+        String message = "hello java";
+        encoder.setEncodingStrategy(base64);
+        String base64Result = encoder.getMessage(message);
+        System.out.println(base64Result); // 출력 : aGVsbG8gamF2YQ==
+
+        encoder.setEncodingStrategy(normal);
+        String normalResult = encoder.getMessage(message);
+        System.out.println(normalResult); // 출력 : hello java
+
+        encoder.setEncodingStrategy(new AppendStrategy());
+        String appendResult = encoder.getMessage(message);
+        System.out.println(appendResult); // 출력 : ABCDhello java
+
     }
 
     // Adapter 콘센트 동작
