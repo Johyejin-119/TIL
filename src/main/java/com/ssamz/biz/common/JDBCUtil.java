@@ -8,15 +8,14 @@ import java.sql.SQLException;
 
 public class JDBCUtil {
 	
-	public static Connection getConnection() { // getConnection�� Ŀ�ؼ� ��ü�ϳ� conn ���� 
+	public static Connection getConnection() {
 		Connection conn = null;
 		try {
-			// JDBC 1�ܰ� : ����̹� ��ü �ε�			
+			// JDBC 1단계 : 드라이버 객체 로딩			
 			DriverManager.registerDriver(new org.h2.Driver());
 			
-			// JDBC 2�ܰ� : Ŀ�ؼ� ����
+			// JDBC 2단계 : 커넥션 연결
 			conn = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -24,7 +23,7 @@ public class JDBCUtil {
 	}
 	
 	public static void close(PreparedStatement stmt, Connection conn) {
-		// JDBC 5�ܰ� : ���� ����
+		// JDBC 5단계 : 연결 해제
 		try {
 			stmt.close();
 		} catch (SQLException e) {
@@ -38,27 +37,25 @@ public class JDBCUtil {
 		}
 	}
 	
-	// select������ resultset ����
-	public static void close(ResultSet rs, PreparedStatement stmt, 
-			Connection conn) {
-				// JDBC 5�ܰ� : ���� ����
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-				
-				try {
-					stmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-				
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+	public static void close(ResultSet rs, PreparedStatement stmt, Connection conn) {
+		// JDBC 5단계 : 연결 해제
+		try {
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

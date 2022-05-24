@@ -9,19 +9,19 @@ import java.util.List;
 
 import com.ssamz.biz.common.JDBCUtil;
 
-// Data Access Object 클래스
+// Data Access Object 클래스 
 public class UserDAO {
-	// JDBC 관련 변수
+	// JDBC 관련 변수 
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
 	
-	// USER 테이블 관련 SQL 명령어
-	private final String USER_INSERT = "insert into users values(?, ?, ?, ?)";
-	private final String USER_GET = "select * from users where id = ?";
-	private final String USER_LIST = "select * from users order by id desc";
+	// STUDENT 테이블 관련 SQL 명령어
+	private final String USER_INSERT = "insert into users(id, password, name, role) values(?, ?, ?, ?)";
+	private final String USER_LIST   = "select * from users order by id desc";
+	private final String USER_GET    = "select * from users where id = ?";
 
-	// USER 테이블관련 CRUD 메소드
+	// USER 테이블 관련 CRUD 메소드
 	// 회원 가입
 	public void insertUser(UserVO vo) {
 		try {
@@ -38,7 +38,6 @@ public class UserDAO {
 			JDBCUtil.close(stmt, conn);
 		}
 	}
-	
 	
 	// 회원 상세 조회
 	public UserVO getUser(UserVO vo) {
