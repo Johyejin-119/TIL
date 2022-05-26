@@ -1,3 +1,4 @@
+/*
 package com.example.objectmapper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -39,3 +40,4 @@ class ObjectMapperApplicationTests {
     }
 
 }
+*/

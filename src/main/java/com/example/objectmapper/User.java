@@ -1,3 +1,4 @@
+/*
 package com.example.objectmapper;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -46,3 +47,4 @@ public class User {
                 '}';
     }
 }
+*/
