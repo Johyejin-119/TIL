@@ -47,7 +47,7 @@ public class WishListRepositoryTest {
         var saveEntity = wishListRepository.save(expected);
 
         Assertions.assertEquals("update test", saveEntity.getTitle()); // getTitle() 은 동일해야 함
-        Assertions.assertEquals(1, wishListRepository.ListAll().size()); // size 는 1이여야함 -> 덮어쓰기
+        Assertions.assertEquals(1, wishListRepository.findAll().size()); // size 는 1이여야함 -> 덮어쓰기
 
     }
 
@@ -69,7 +69,7 @@ public class WishListRepositoryTest {
         wishListRepository.save(wishListEntity);
         wishListRepository.deleteById(1); // 1번 값 삭제
 
-        int count = wishListRepository.ListAll().size();
+        int count = wishListRepository.findAll().size();
 
         Assertions.assertEquals(0, count); // 데이터 하나 넣은 후 삭제했으므로 size 는 0 이여야 함
 
@@ -83,7 +83,7 @@ public class WishListRepositoryTest {
         var wishListEntity2 = create();
         wishListRepository.save(wishListEntity2);
 
-        int count = wishListRepository.ListAll().size();
+        int count = wishListRepository.findAll().size();
         Assertions.assertEquals(2, count); // size 는 2 이여야 함
     }
 
