@@ -80,6 +80,4 @@ public class NaverClient {
         );
         return responseEntity.getBody();
     }
-
-
 }

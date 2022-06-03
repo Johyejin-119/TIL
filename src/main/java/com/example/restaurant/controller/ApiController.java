@@ -41,6 +41,4 @@ public class ApiController {
     public void addVisit(@PathVariable int index) {
         wishListService.addVisit(index); // 방문 클릭 시, (index) 방문 수만 추가
     }
-
-
 }

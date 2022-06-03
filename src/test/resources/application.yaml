@@ -9,5 +9,8 @@ naver:
 
 spring:
   mvc:
-    pathmatch:
+    path match:
       matching-strategy: ant_path_matcher
+
+server:
+  port: 9090
