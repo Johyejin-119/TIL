@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.stream.IntStream;
 
+// 1000
 public class APlusB {
     public static void main(String[] args) throws IOException {
 
