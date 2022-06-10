@@ -7,8 +7,10 @@ import java.io.InputStreamReader;
 // 9498
 public class TestResult {
     public static void main(String[] args) throws IOException {
+
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int a = Integer.parseInt(bufferedReader.readLine());
+
         if (100 >= a && a >= 0) {
             if (a < 60) {
                 System.out.println("F");
