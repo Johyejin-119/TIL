@@ -17,6 +17,12 @@ public class JpaMain {
 
         // 우리가 실행할 코드 작성
         try {
+            Member member = new Member();
+            //member.setId(10L);
+            member.setUsername("yeppiA");
+
+            em.persist(member);
+
             tx.commit();
         } catch (Exception e) {
             em.close();
