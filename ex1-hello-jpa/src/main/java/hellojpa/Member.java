@@ -5,16 +5,20 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
-@SequenceGenerator(name = "member_seq-generator", sequenceName = "member_seq")
 public class Member {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "member_seq-generator")
+    @Id @GeneratedValue
+    @Column(name = "MEMBER_ID")
     private Long id;
 
-    @Column(name = "name", nullable = false) // 데이터베이스 컬럼명은 name
+    @Column(name = "USERNAME") // 데이터베이스 컬럼명은 name
     private String username;
 
-    public Member(){}
+//    @Column(name = "TEAM_ID")
+//    private Long teamId;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
     public Long getId() {
         return id;
@@ -30,5 +34,13 @@ public class Member {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }

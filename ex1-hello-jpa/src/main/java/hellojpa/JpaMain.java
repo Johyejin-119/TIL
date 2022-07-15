@@ -17,11 +17,20 @@ public class JpaMain {
 
         // 우리가 실행할 코드 작성
         try {
-            Member member = new Member();
-            //member.setId(10L);
-            member.setUsername("yeppiA");
 
+            // 저장
+            Team team = new Team();
+            team.setName("YeppiTeam");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("Member1");
+            member.setTeam(team);
             em.persist(member);
+
+            Member findMember = em.find(Member.class, member.getId());
+            Team findTeam = findMember.getTeam();
+            System.out.println("findTeam.getName() = " + findTeam.getName());
 
             tx.commit();
         } catch (Exception e) {
