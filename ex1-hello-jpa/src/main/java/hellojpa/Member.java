@@ -43,4 +43,14 @@ public class Member {
     public void setTeam(Team team) {
         this.team = team;
     }
+
+    // 단순한 값 넣기가 아닌, 로직이 있을 땐 set 메서드대신 다른 메서드 명 사용 권장
+    public void changeTeam(Team team) {
+        this.team = team;
+
+        // 연관관계 편의 메서드
+        // Member 자신(this)을 team 에 넣어준다
+        team.getMembers().add(this);
+
+    }
 }
