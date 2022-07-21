@@ -12,12 +12,14 @@ public class Order {
     @Column(name = "ORDER_ID")
     private Long id;
 
-//    @Column(name = "MEMBER_ID")
-//    private Long memberId;
-
     @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
+
+    // Delivery 와 1:1
+    @OneToOne
+    @JoinColumn(name = "DELEVERY_ID")
+    private Delivery delivery;
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>(); // new ArrayList<>()는 관례
