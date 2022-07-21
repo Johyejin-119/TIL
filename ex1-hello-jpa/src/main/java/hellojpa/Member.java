@@ -13,9 +13,8 @@ public class Member {
     @Column(name = "USERNAME") // 데이터베이스 컬럼명은 name
     private String username;
 
-//    @Column(name = "TEAM_ID")
-//    private Long teamId;
 
+    // 1. 다대일
     @ManyToOne
     @JoinColumn(name = "TEAM_ID")
     private Team team;
