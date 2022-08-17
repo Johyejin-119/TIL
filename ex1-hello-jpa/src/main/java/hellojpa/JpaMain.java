@@ -26,7 +26,7 @@ public class JpaMain {
             // 연관관계의 주인은? FK가 있는, 다 : 1에서 다쪽인 Member
             Member member = new Member();
             member.setUsername("member1");
-            //member.changeTeam(team); // 주인쪽에서 값을 설정해야 null 값이 안생김 // Member 에 연관관계 편의 메서드 생성 시**
+            //member. (team); // 주인쪽에서 값을 설정해야 null 값이 안생김 // Member 에 연관관계 편의 메서드 생성 시**
             em.persist(member);
 
             // Team 에 연관관계 편의 메서드 생성 시**
