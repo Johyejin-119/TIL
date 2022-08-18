@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class) // Spring 관련 테스트라는 것을 JUnit에게 알려줌
 @SpringBootTest
 public class MemberRepositoryTest {
-
+/*
     @Autowired MemberRepository memberRepository;
 
     @Test
@@ -36,5 +36,5 @@ public class MemberRepositoryTest {
         Assertions.assertThat(findMember).isEqualTo(member); // true // 같은 영속성 컨텍스트안에서 id 값이 같다면? 같은 entity 이다.
 
     }
-
+*/
 }
