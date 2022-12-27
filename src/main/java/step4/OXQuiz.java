@@ -10,11 +10,22 @@ public class OXQuiz {
 
         int num = Integer.parseInt(br.readLine());
 
-        StringBuffer text = new StringBuffer();
+        StringBuilder text = new StringBuilder();
         for (int i = 0; i < num; i++) {
-            text.append(br.readLine());
+            int count = 0;
+            int sum = 0;
 
+            for (byte value : br.readLine().getBytes()) {
+
+                if (value == 'O') {
+                    count++;
+                    sum += count;
+                }
+                else { count = 0; }
+            }
+            text.append(sum).append('\n');
         }
-
+        wr.write(String.valueOf(text));
+        wr.close();
     }
 }
