@@ -15,6 +15,13 @@ public class NumberSum {
             sum += Integer.parseInt(number);
         }
 
+        // byte
+        /*
+        int sum = 0;
+        for (byte value : br.readLine().getBytes()) {
+            sum += (value - '0'); // 48
+        }
+        */
         System.out.println(sum);
     }
 }
