@@ -6,6 +6,32 @@ import java.io.InputStreamReader;
 
 public class WordStudy {
     public static void main(String[] args) throws IOException {
+
+        int[] count = new int[26];
+        int s = System.in.read();
+        while (s > 64) {
+            if (s < 91) {
+                count[s - 65]++;
+            } else {
+                count[s - 97]++;
+            }
+            s = System.in.read();
+        }
+
+        int max = -1;
+        int ch = -2; // ? == 63
+
+        for (int i = 0; i < 26; i++) {
+            if (count[i] > max) {
+                max = count[i];
+                ch = i;
+            } else if (count[i] == max) {
+                ch = -2;
+            }
+        }
+        System.out.println((char) (ch + 65));
+
+/*
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String s = br.readLine();
@@ -31,6 +57,7 @@ public class WordStudy {
             }
         }
         System.out.println(ch);
+*/
 
     }
 }
