@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // 2581
-public class Decimal {
+public class PrimeNumber {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int M = Integer.parseInt(br.readLine());
