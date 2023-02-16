@@ -25,6 +25,9 @@ public class Statistics {
         double average = numbers.stream().mapToInt(Integer::intValue).average().orElse(0);
         sb.append((int)Math.round(average));
 
+        // center
+        int center = numbers.get((N / 2));
+        sb.append(center);
 
 
 
