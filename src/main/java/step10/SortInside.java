@@ -9,7 +9,7 @@ public class SortInside {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String N = br.readLine();
-        int[] num = new int[1000000000];
+        int[] num = new int[10];
 
         for (int i = 0; i < N.length(); i++) {
             num[Integer.parseInt(String.valueOf(N.charAt(i)))]++;
@@ -17,7 +17,7 @@ public class SortInside {
         br.close();
 
 
-        for (int i = num.length - 1; i >= 0; i--) {
+        for (int i = 9; i >= 0; i--) {
             if (num[i] > 0) {
                 System.out.print(i);
             }
