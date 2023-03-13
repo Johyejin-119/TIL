@@ -3,6 +3,7 @@ package step10;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 11650
@@ -11,26 +12,29 @@ public class SortCoordinate {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
-        int[][] xy = new int[N][N];
-        int first;
-        int second;
+        int[][] xy = new int[N][2];
         
         StringTokenizer str;
         for (int i = 0; i < N; i++) {
             str = new StringTokenizer(br.readLine(), " ");
-            first = Integer.parseInt(str.nextToken());
-            second = Integer.parseInt(str.nextToken());
-            
-            xy[first][second]++;
+            xy[i][0] = Integer.parseInt(str.nextToken());
+            xy[i][1] = Integer.parseInt(str.nextToken());
         }
         br.close();
 
-        for (int i = xy.length-1; i >= 0; i--) {
-            for (int j = xy.length-1; j >= 0; j--) {
-                if (xy[i][j] > 0) {
-                    System.out.println(i + " " + j);
-                }
+        // comparator
+        Arrays.sort(xy, (e1, e2) -> {
+            if (e1[0] == e2[0]) {
+                return e1[1] - e2[1];
+            } else {
+                return e1[0] - e2[0];
             }
+        });
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            sb.append(xy[i][0] + " " + xy[i][1]).append('\n');
         }
+        System.out.println(sb);
     }
 }
