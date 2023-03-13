@@ -23,13 +23,7 @@ public class SortCoordinate {
         br.close();
 
         // comparator
-        Arrays.sort(xy, (e1, e2) -> {
-            if (e1[0] == e2[0]) {
-                return e1[1] - e2[1];
-            } else {
-                return e1[0] - e2[0];
-            }
-        });
+        Arrays.sort(xy, (e1, e2) -> (e1[0] == e2[0] ? e1[1] - e2[1] : e1[0] - e2[0]));
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < N; i++) {
