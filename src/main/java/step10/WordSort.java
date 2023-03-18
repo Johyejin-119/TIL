@@ -18,8 +18,8 @@ public class WordSort {
         }
         br.close();
 
-
-        Arrays.sort(alphabet, (e1, e2) -> (e1.equals(e2) ? e2.charAt(0) - e1.charAt(0) : e1.charAt(0) - e2.charAt(0)));
+        Arrays.sort(alphabet, (e1, e2) -> (e1.length() - e2.length()));
+        //Arrays.sort(alphabet, (e1, e2) -> (e1.equals(e2) ? e2.charAt(0) - e1.charAt(0) : e1.charAt(0) - e2.charAt(0)));
         for (int i = 0; i < N; i++) {
             sb.append(alphabet[i]).append('\n');
         }
