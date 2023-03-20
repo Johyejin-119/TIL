@@ -3,7 +3,7 @@ package step10;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.*;
 
 // 1181
 public class WordSort {
@@ -12,20 +12,30 @@ public class WordSort {
         int N = Integer.parseInt(br.readLine());
 
         String[] alphabet = new String[N];
-        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < N; i++) {
             alphabet[i] = br.readLine();
         }
         br.close();
 
-        Arrays.sort(alphabet, (e1, e2) -> (e1.length() - e2.length()));
-        //Arrays.sort(alphabet, (e1, e2) -> (e1.equals(e2) ? e2.charAt(0) - e1.charAt(0) : e1.charAt(0) - e2.charAt(0)));
-        for (int i = 0; i < N; i++) {
-            sb.append(alphabet[i]).append('\n');
+        Arrays.sort(alphabet, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if (o1.length() == o2.length()) {
+                    return o1.compareTo(o2);
+                }
+                else {
+                    return o1.length() - o2.length();
+                }
+            }
+        });
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(alphabet[0]).append('\n');
+        for (int i = 1; i < N; i++) {
+            if (!alphabet[i].equals(alphabet[i-1])) {
+                sb.append(alphabet[i]).append('\n');
+            }
         }
         System.out.println(sb);
-
-
-
     }
 }
