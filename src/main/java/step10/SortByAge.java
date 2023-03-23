@@ -10,20 +10,23 @@ public class SortByAge {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        HashMap<Integer, String> members = new HashMap<>();
+        String[][] member = new String[N][2];
 
         StringTokenizer str;
         for (int i = 0; i < N; i++) {
             str = new StringTokenizer(br.readLine(), " ");
-            members.put(Integer.valueOf(str.nextToken()), str.nextToken());
+            member[i][0] = str.nextToken();
+            member[i][1] = str.nextToken();
         }
         br.close();
 
-        List<Integer> ageList = new ArrayList<>(members.keySet());
-        ageList.sort(Integer::compareTo);
-        for (Integer age : ageList) {
-            System.out.println(age + " " + members.get(age));
-        }
 
+        Arrays.sort(member, (s1, s2) -> Integer.parseInt(s1[0]) - Integer.parseInt(s2[0]));
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            sb.append(member[i][0]).append(' ').append(member[i][1]).append('\n');
+
+        }
+        System.out.print(sb);
     }
 }
