@@ -16,19 +16,26 @@ public class CoordinateCompression {
         int[] sortedCC = new int[N];
         HashMap<Integer, Integer> rankCC = new HashMap<>();
 
-        StringTokenizer str;
+        StringTokenizer str = new StringTokenizer(br.readLine(), " ");;
         for (int i = 0; i < N; i++) {
-            str = new StringTokenizer(br.readLine(), " ");
             originCC[i] = sortedCC[i] = Integer.parseInt(str.nextToken());
         }
+        br.close();
         Arrays.sort(sortedCC);
 
         int count = 0;
-        for (int temp : sortedCC) {
-            if (!rankCC.containsKey(temp)) {
-                rankCC.put(temp, count);
+        for (int tempSort : sortedCC) {
+            if (!rankCC.containsKey(tempSort)) {
+                rankCC.put(tempSort, count);
                 count++;
             }
         }
+
+        StringBuilder sb = new StringBuilder();
+        for (int tempOrigin : originCC) {
+            Integer rank = rankCC.get(tempOrigin);
+            sb.append(rank).append(' ');
+        }
+        System.out.print(sb);
     }
 }
