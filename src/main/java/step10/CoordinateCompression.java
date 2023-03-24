@@ -23,5 +23,12 @@ public class CoordinateCompression {
         }
         Arrays.sort(sortedCC);
 
+        int count = 0;
+        for (int temp : sortedCC) {
+            if (!rankCC.containsKey(temp)) {
+                rankCC.put(temp, count);
+                count++;
+            }
+        }
     }
 }
