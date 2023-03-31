@@ -33,7 +33,7 @@ public class BlackJack {
             for (int j = i + 1; j < n - 1 ; j++) {
                 if (card[i]+card[j] > m) continue;
 
-                for (int k = j + 2; k < n; k++) {
+                for (int k = j + 1; k < n; k++) {
                     int temp = card[i] + card[j] + card[k];
                     if (temp == m) return temp;
                     if (temp < m && temp > res) res = temp;
