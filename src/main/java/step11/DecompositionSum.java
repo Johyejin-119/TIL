@@ -8,20 +8,23 @@ import java.io.InputStreamReader;
 public class DecompositionSum {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String N = br.readLine();
-        int size = N.length();
-        int min = Integer.parseInt(N) - (9 * size);
+        int N = Integer.parseInt(br.readLine());
+        int size = String.valueOf(N).length();
+        int min = N - (9 * size);
         int result = 0;
 
-        for (int i = min; i < Integer.parseInt(N); i++) {
-            int sum = i;
+        for (int i = min; i < N; i++) {
+            int sum = 0;
             int temp = i;
             while (temp > 0) {
-                sum += temp / 10;
+                sum += temp % 10;
                 temp /= 10;
             }
+            if (i + sum == N) {
+                result = i;
+                break;
+            }
         }
-
-
+        System.out.println(result);
     }
 }
