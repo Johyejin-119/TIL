@@ -17,5 +17,15 @@ public class MathOnlineClass {
         int e = Integer.parseInt(str.nextToken());
         int f = Integer.parseInt(str.nextToken());
 
+        System.out.println(simultaneousEquations(a, b, c, d, e, f));
+    }
+
+    private static String simultaneousEquations(int a, int b, int c, int d, int e, int f) {
+        for (int x = -999; x < 1000; x++) {
+            for (int y = -999; y < 1000; y++) {
+                if ((a * x) + (b * y) == c && (d * x) + (e * y) == f) return x + " " + y;
+            }
+        }
+        return "Not found: x, y values";
     }
 }
