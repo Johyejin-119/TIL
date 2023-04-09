@@ -40,7 +40,21 @@ public class ShootingPractice {
 
         Collections.sort(numList);
         Collections.reverse(numList);
-
+        for (int k = 0; k < shoot.length; k++) {
+            for (Integer num : numList) {
+                if (num >= 10) {
+                    score += num;
+                } else {
+                    if (num >= 0) {
+                        if (num > k) {
+                            num -= k;
+                        } else {
+                            score += num;
+                        }
+                    }
+                }
+            }
+        }
         System.out.println(score);
     }
 }
