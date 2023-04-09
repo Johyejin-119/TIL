@@ -48,6 +48,7 @@ public class ShootingPractice {
                     if (num >= 0) {
                         if (num > k) {
                             num -= k;
+                            checkOfNumberIsZero(N, num, boardNum, score);
                         } else {
                             score += num;
                         }
@@ -56,5 +57,18 @@ public class ShootingPractice {
             }
         }
         System.out.println(score);
+    }
+    private static void checkOfNumberIsZero(int N, Integer num, int[][] boardNum, int score) {
+        for (int row = 0; row < N; row++) {
+            for (int col = 0; col < N; col++) {
+                if (num == boardNum[row][col] && 4 <= num && num <= 9) {
+                    score += num;
+                    if (row + 1 < N && boardNum[row + 1][col] == 0) boardNum[row + 1][col] = num / 4;
+                    if (col + 1 < N && boardNum[row][col + 1] == 0) boardNum[row][col + 1] = num / 4;
+                    if (row - 1 >= 0 && boardNum[row - 1][col] == 0) boardNum[row - 1][col] = num / 4;
+                    if (col - 1 >= 0 && boardNum[row][col - 1] == 0) boardNum[row][col - 1] = num / 4;
+                }
+            }
+        }
     }
 }
