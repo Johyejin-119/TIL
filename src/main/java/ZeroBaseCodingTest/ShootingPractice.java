@@ -38,6 +38,9 @@ public class ShootingPractice {
 
         br.close();
 
+        Collections.sort(numList);
+        Collections.reverse(numList);
+
         System.out.println(score);
     }
 }
