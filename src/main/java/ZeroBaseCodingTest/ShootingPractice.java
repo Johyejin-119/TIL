@@ -3,6 +3,8 @@ package ZeroBaseCodingTest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.StringTokenizer;
 
 // 27958
@@ -14,14 +16,18 @@ public class ShootingPractice {
         int N = Integer.parseInt(br.readLine());
         int K = Integer.parseInt(br.readLine());
 
+        ArrayList<Integer> numList = new ArrayList<>();
         int[][] boardNum = new int[N][N];
         int[] shoot = new int[K];
+        int score = 0;
 
 
         for (int row = 0; row < N; row++) {
             str = new StringTokenizer(br.readLine(), " ");
             for (int col = 0; col < N; col++) {
-                boardNum[row][col] = Integer.parseInt(str.nextToken());
+                int temp = Integer.parseInt(str.nextToken());
+                numList.add(temp);
+                boardNum[row][col] = temp;
             }
         }
 
@@ -32,8 +38,6 @@ public class ShootingPractice {
 
         br.close();
 
-
-
+        System.out.println(score);
     }
-
 }
