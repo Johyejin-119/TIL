@@ -20,7 +20,7 @@ public class RepaintingChessboard {
         for (int i = 0; i < N; i++) {
             String row = br.readLine();
             for (int j = 0; j < M; j++) {
-                checkWhiteOrBlack(check, i, row, j);
+                check[i][j] = row.charAt(j) == 'W';
             }
         }
 
@@ -45,9 +45,5 @@ public class RepaintingChessboard {
         }
         count = Math.min(count, (64 - count));
         min = Math.min(min, count);
-    }
-
-    public static void checkWhiteOrBlack(boolean[][] check, int i, String row, int j) {
-        check[i][j] = row.charAt(j) == 'W';
     }
 }
