@@ -48,11 +48,6 @@ public class RepaintingChessboard {
     }
 
     public static void checkWhiteOrBlack(boolean[][] check, int i, String row, int j) {
-        if (row.charAt(j) == 'W') { // white
-            check[i][j] = true;
-        }
-        else { // black
-            check[i][j] = false;
-        }
+        check[i][j] = row.charAt(j) == 'W';
     }
 }
