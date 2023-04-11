@@ -39,9 +39,9 @@ public class RepaintingChessboard {
         for (int i = row; i < row + 8; i++) {
             for (int j = col; j < col + 8; j++) {
                 if (firstColor != check[i][j]) count++;
-                firstColor = !firstColor;
+                firstColor = (!firstColor);
             }
-            firstColor = !firstColor;
+            firstColor = (!firstColor);
         }
         count = Math.min(count, (64 - count));
         min = Math.min(min, count);
