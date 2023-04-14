@@ -26,7 +26,20 @@ public class Q2 {
                 }
             }
         }
+        dfs(0, sum);
         System.out.println(count);
     }
 
+    public static void dfs(int depth, int sum) {
+        if (depth == n) {
+            if (sum == 0) {
+                count++;
+            }
+            return;
+        }
+        // 모든 경우의 수 탐색
+        for (int i = 0; i <= sum / coins[depth]; i++) {
+            dfs(depth + 1, sum - coins[depth] * i); // 재귀 호출
+        }
+    }
 }
