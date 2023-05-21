@@ -14,5 +14,10 @@ public class PrefixSum {
         int M = Integer.parseInt(str.nextToken());
         long[] S = new long[N + 1];
 
+        str = new StringTokenizer(br.readLine());
+        for (int i = 1; i < N + 1; i++) {
+            S[i] = S[i - 1] + Integer.parseInt(str.nextToken());
+        }
+
     }
 }
