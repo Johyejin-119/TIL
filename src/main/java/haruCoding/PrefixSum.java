@@ -19,5 +19,11 @@ public class PrefixSum {
             S[i] = S[i - 1] + Integer.parseInt(str.nextToken());
         }
 
+        for (int i = 0; i < M; i++) {
+            str = new StringTokenizer(br.readLine());
+            int start = Integer.parseInt(str.nextToken());
+            int end = Integer.parseInt(str.nextToken());
+            System.out.println(S[end] - S[start - 1]);
+        }
     }
 }
