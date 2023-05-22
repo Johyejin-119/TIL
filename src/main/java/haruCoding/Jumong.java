@@ -18,5 +18,6 @@ public class Jumong {
         for (int i = 0; i < N; i++) {
             numbers[i] = Integer.parseInt(str.nextToken());
         }
+        Arrays.sort(numbers);
     }
 }
