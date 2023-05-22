@@ -19,5 +19,19 @@ public class Jumong {
             numbers[i] = Integer.parseInt(str.nextToken());
         }
         Arrays.sort(numbers);
+
+        int min  = 0;
+        int max  = N-1;
+        int count = 0;
+        while (min < max) {
+            if (numbers[min] + numbers[max] < M) {
+                min++;
+            } else if (numbers[min] + numbers[max] > M) {
+                max--;
+            } else {
+                count++; min++; max--;
+            }
+        }
+        System.out.println(count);
     }
 }
