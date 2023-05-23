@@ -22,5 +22,38 @@ public class DNAPassword {
         checkWord = 0;
         int count = 0;
 
+        str = new StringTokenizer(br.readLine());
+        for (int i = 0; i < 4; i++) {
+            pwCheck[i] = Integer.parseInt(str.nextToken());
+            if (pwCheck[i] == 0) checkWord++;
+        }
+
+        for (int i = 0; i < P; i++) {
+            TextAndPwCheckingAdd(texts[i]);
+        }
+
+        if (checkWord == 4) count++;
+
+    }
+
+    private static void TextAndPwCheckingAdd(char text) {
+        switch (text) {
+            case 'A':
+                textCheck[0]++;
+                if (textCheck[0] == pwCheck[0]) checkWord++;
+                break;
+            case 'C':
+                textCheck[1]++;
+                if (textCheck[1] == pwCheck[1]) checkWord++;
+                break;
+            case 'G':
+                textCheck[2]++;
+                if (textCheck[2] == pwCheck[2]) checkWord++;
+                break;
+            case 'T':
+                textCheck[3]++;
+                if (textCheck[3] == pwCheck[3]) checkWord++;
+                break;
+        }
     }
 }
