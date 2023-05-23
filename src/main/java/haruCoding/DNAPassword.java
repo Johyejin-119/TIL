@@ -29,11 +29,19 @@ public class DNAPassword {
         }
 
         for (int i = 0; i < P; i++) {
-            TextAndPwCheckingAdd(texts[i]);
+            TextAndPwCheckingAdd(texts[i]); // first setting
         }
 
         if (checkWord == 4) count++;
 
+        // Slicing Window
+        for (int end = P; end < S; end++) {
+            int start = end - P;
+            TextAndPwCheckingAdd(texts[end]);
+            TextAndPwCheckingRemove(texts[start]);
+            if (checkWord == 4) count++;
+        }
+        System.out.println(count);
     }
 
     private static void TextAndPwCheckingAdd(char text) {
@@ -53,6 +61,27 @@ public class DNAPassword {
             case 'T':
                 textCheck[3]++;
                 if (textCheck[3] == pwCheck[3]) checkWord++;
+                break;
+        }
+    }
+
+    private static void TextAndPwCheckingRemove(char text) {
+        switch (text) {
+            case 'A':
+                if (textCheck[0] == pwCheck[0]) checkWord--;
+                textCheck[0]--;
+                break;
+            case 'C':
+                if (textCheck[1] == pwCheck[1]) checkWord--;
+                textCheck[1]--;
+                break;
+            case 'G':
+                if (textCheck[2] == pwCheck[2]) checkWord--;
+                textCheck[2]--;
+                break;
+            case 'T':
+                if (textCheck[3] == pwCheck[3]) checkWord--;
+                textCheck[3]--;
                 break;
         }
     }
