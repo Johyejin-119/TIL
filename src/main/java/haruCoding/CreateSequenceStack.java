@@ -17,6 +17,7 @@ public class CreateSequenceStack {
 
         Stack<Integer> stack = new Stack<>();
         int s_value = 1;
+        boolean check = true;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < seq.length; i++) {
             if (seq[i] >= s_value) {
@@ -28,7 +29,14 @@ public class CreateSequenceStack {
                 sb.append("-\n");
             }
             else {
-                stack.pop();
+                int pop = stack.pop();
+                if (seq[i] < pop) {
+                    System.out.println("NO");
+                    check = false;
+                    break;
+                } else {
+                    sb.append("-\n");
+                }
             }
         }
 
