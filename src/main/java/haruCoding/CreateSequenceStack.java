@@ -39,6 +39,6 @@ public class CreateSequenceStack {
                 }
             }
         }
-
+        if (check) System.out.println(sb);
     }
 }
