@@ -21,7 +21,7 @@ public class CreateSequenceStack {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < seq.length; i++) {
             if (seq[i] >= s_value) {
-                while (seq[i] == s_value) {
+                while (seq[i] >= s_value) {
                     stack.push(s_value++);
                     sb.append("+\n");
                 }
