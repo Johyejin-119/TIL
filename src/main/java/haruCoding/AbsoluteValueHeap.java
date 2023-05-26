@@ -18,5 +18,18 @@ public class AbsoluteValueHeap {
             }
             return abs_o1 - abs_o2;
         }));
+
+        for (int i = 0; i < N; i++) {
+            int x = Integer.parseInt(br.readLine());
+            if (x == 0) {
+                if (pQueue.isEmpty()) {
+                    System.out.println("0");
+                } else {
+                    System.out.println(pQueue.poll());
+                }
+            } else {
+                pQueue.add(x);
+            }
+        }
     }
 }
