@@ -24,5 +24,8 @@ public class SortingNumber {
                 }
             } 
         }
+        for (int i = 0; i < sortValues.length; i++) {
+            System.out.println(sortValues[i]);
+        }
     }
 }
