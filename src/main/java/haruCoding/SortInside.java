@@ -25,5 +25,8 @@ public class SortInside {
                 sectSort[max] = temp;
             }
         }
+        for (int i = 0; i < N.length(); i++) {
+            System.out.print(sectSort[i]);
+        }
     }
 }
