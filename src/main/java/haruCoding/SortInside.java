@@ -14,5 +14,16 @@ public class SortInside {
         for (int i = 0; i < N.length(); i++) {
             sectSort[i] = Integer.parseInt(N.substring(i, i+1));
         }
+        for (int i = 0; i < N.length(); i++) {
+            int max = i;
+            for (int j = i+1; j < N.length(); j++) {
+                if (sectSort[j] > sectSort[max]) max = j;
+            }
+            if (sectSort[i] < sectSort[max]) { // swap
+                int temp = sectSort[i];
+                sectSort[i] = sectSort[max];
+                sectSort[max] = temp;
+            }
+        }
     }
 }
