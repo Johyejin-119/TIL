@@ -24,5 +24,10 @@ public class InsertionSort {
             }
             insertSort[j + 1] = origin;
         }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < insertSort.length; i++) {
+            sb.append(insertSort[i]).append("\n");
+        }
+        System.out.println(sb);
     }
 }
