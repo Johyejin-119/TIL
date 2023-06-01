@@ -14,5 +14,15 @@ public class InsertionSort {
         for (int i = 0; i < N; i++) {
             insertSort[i] = Integer.parseInt(br.readLine());
         }
+
+        for (int i = 1; i < insertSort.length; i++) {
+            int origin = insertSort[i];
+            int j = i - 1;
+            while (j >= 0 && origin < insertSort[j]) {
+                insertSort[j+1] = insertSort[j];
+                j--;
+            }
+            insertSort[j + 1] = origin;
+        }
     }
 }
