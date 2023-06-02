@@ -15,5 +15,20 @@ public class QuickSort {
         for (int i = 0; i < N; i++) {
             arrQuick[i] = Integer.parseInt(br.readLine());
         }
+
+        quickSort(arrQuick, 0, N - 1);
+
+    }
+
+    private static void quickSort(int[] arrQuick, int start, int end) {
+        if(start >= end) {
+            return;
+        }
+
+        int pivot = partition(arrQuick, start, end);
+    }
+
+    private static int partition(int[] arrQuick, int start, int end) {
+
     }
 }
