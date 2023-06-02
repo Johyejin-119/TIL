@@ -17,6 +17,10 @@ public class QuickSort {
         }
 
         quickSort(arrQuick, 0, N - 1);
+
+        for (int i = 0; i < arrQuick.length; i++) {
+            System.out.println(arrQuick[i]);
+        }
     }
 
     private static void quickSort(int[] arrQuick, int start, int end) {
