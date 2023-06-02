@@ -29,6 +29,30 @@ public class QuickSort {
     }
 
     private static int partition(int[] arrQuick, int start, int end) {
+        int mid = (start + end) / 2;
+        swap(arrQuick, start, mid);
 
+        int pivot = arrQuick[start];
+        int s = start, e = end;
+
+        while(s < e) {
+            while(pivot < arrQuick[e]) {
+                e--;
+            }
+
+            while(s < e && pivot >= arrQuick[s]) {
+                s++;
+            }
+            swap(arrQuick, s, e);
+        }
+        arrQuick[start] = arrQuick[s];
+        arrQuick[s] = pivot;
+        return s;
+    }
+
+    private static void swap(int[] arrQuick, int start, int mid) {
+        int temp = arrQuick[mid];
+        arrQuick[mid] = arrQuick[start];
+        arrQuick[start] = temp;
     }
 }
