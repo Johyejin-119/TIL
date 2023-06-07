@@ -31,7 +31,11 @@ public class RadixSort {
 
         int digit = 10; // 자릿수를 구하기 위해 나눠질 변수
         while(textSize != 0) {
-
+            // 자릿수 기준으로 큐에 값 넣기
+            for (int i = 0; i < arrRadix.length; i++) {
+                int qIndex = (arrRadix[i] / digit) % 10;
+                queue[qIndex].add(arrRadix[i]);
+            }
 
 
 
