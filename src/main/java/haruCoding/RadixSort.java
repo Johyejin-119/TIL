@@ -3,6 +3,7 @@ package haruCoding;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Queue;
 
 // 2751
 public class RadixSort {
@@ -13,6 +14,24 @@ public class RadixSort {
         int[] arrRadix = new int[N];
         for (int i = 0; i < arrRadix.length; i++) {
             arrRadix[i] = Integer.parseInt(br.readLine());
+        }
+
+        int textSize = 2;
+        radixSort(arrRadix, textSize);
+
+
+    }
+
+    private static void radixSort(int[] arrRadix, int textSize) {
+        Queue<Integer>[] queue = new Queue[10];
+        int digit = 10; // 자릿수를 구하기 위해 나눠질 변수
+        while(textSize != 0) {
+
+
+
+
+            digit *= 10;
+            textSize--;
         }
 
     }
