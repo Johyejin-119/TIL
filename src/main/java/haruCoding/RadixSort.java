@@ -17,13 +17,12 @@ public class RadixSort {
             arrRadix[i] = Integer.parseInt(br.readLine());
         }
 
-        int textSize = 2;
-        radixSort(arrRadix, textSize);
+        radixSort(arrRadix);
 
 
     }
 
-    private static void radixSort(int[] arrRadix, int textSize) {
+    private static void radixSort(int[] arrRadix) {
         Queue<Integer>[] queue = new Queue[10];
         for (int i = 0; i < queue.length; i++) {
             queue[i] = new LinkedList<>();
