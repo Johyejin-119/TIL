@@ -37,8 +37,14 @@ public class RadixSort {
                 queue[qIndex].add(arrRadix[i]);
             }
 
-
-
+            //queue[0]~[9] 순서로 정렬된 값 빼오기
+            for (int i = 0; i < arrRadix.length; i++) {
+                int aIndex = 0;
+                while (queue[aIndex].isEmpty()) {
+                    aIndex++;
+                }
+                arrRadix[i] = queue[aIndex].poll();
+            }
             digit *= 10;
             textSize--;
         }
