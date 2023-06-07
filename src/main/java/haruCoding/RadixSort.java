@@ -19,6 +19,9 @@ public class RadixSort {
 
         radixSort(arrRadix);
 
+        for (int radix : arrRadix) {
+            System.out.println(radix);
+        }
 
     }
 
