@@ -29,8 +29,9 @@ public class RadixSort {
             queue[i] = new LinkedList<>();
         }
 
-        int digit = 10; // 자릿수를 구하기 위해 나눠질 변수
-        while(textSize != 0) {
+        int textSize = getTextSize(arrRadix);
+        int digit = 1; // 자릿수를 구하기 위해 나눠질 변수
+        for (int size = 0; size < textSize; size++) {
             // 자릿수 기준으로 큐에 값 넣기
             for (int i = 0; i < arrRadix.length; i++) {
                 int qIndex = (arrRadix[i] / digit) % 10;
@@ -46,8 +47,16 @@ public class RadixSort {
                 arrRadix[i] = queue[aIndex].poll();
             }
             digit *= 10;
-            textSize--;
         }
 
+    }
+
+    private static int getTextSize(int[] arrRadix) {
+        int max = 0;
+        for (int i = 0; i < arrRadix.length; i++) {
+            int size = (int)Math.log10((double)arrRadix[i])+1;
+            if (max < size) max = size;
+        }
+        return max; // 최대 자릿수
     }
 }
