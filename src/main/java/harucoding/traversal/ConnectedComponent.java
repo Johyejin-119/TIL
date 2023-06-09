@@ -49,9 +49,9 @@ public class ConnectedComponent {
             return;
         }
         visited[i] = true; // 방문 했음 체크 완료(false -> true)
-        for (int j = 0; j < adjList.length; j++) {
-            if (!visited[i]) {
-                DFS(i); // 재귀 호출
+        for(int cNode : adjList[i]) {
+            if (!visited[cNode]) {
+                DFS(cNode); // 재귀 호출
             }
         }
     }
