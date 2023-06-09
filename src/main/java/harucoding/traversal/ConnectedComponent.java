@@ -41,6 +41,7 @@ public class ConnectedComponent {
                 DFS(i);
             }
         }
+        System.out.println(resultCnt);
     }
 
     private static void DFS(int i) {
