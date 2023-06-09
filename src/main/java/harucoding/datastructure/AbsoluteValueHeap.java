@@ -1,4 +1,4 @@
-package haruCoding.DataStructure;
+package harucoding.datastructure;
 
 import java.io.BufferedReader;
 import java.io.IOException;

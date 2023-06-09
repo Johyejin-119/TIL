@@ -1,4 +1,4 @@
-package haruCoding.Sorting;
+package harucoding.sorting;
 
 import java.io.BufferedReader;
 import java.io.IOException;

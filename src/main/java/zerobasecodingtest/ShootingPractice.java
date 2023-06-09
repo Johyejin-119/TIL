@@ -1,4 +1,4 @@
-package ZeroBaseCodingTest;
+package zerobasecodingtest;
 
 import java.io.BufferedReader;
 import java.io.IOException;

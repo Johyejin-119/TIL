@@ -1,4 +1,4 @@
-package HanteoGlobal;
+package hanteoglobal;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
