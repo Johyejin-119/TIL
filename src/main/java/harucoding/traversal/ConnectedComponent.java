@@ -31,8 +31,8 @@ public class ConnectedComponent {
             int v = Integer.parseInt(str.nextToken()); // 간선의 양 끝점 노드
 
             // 무방향 그래프이므로, 양쪽 방향을 전부 add
-            adjList[u].add(v);
-            adjList[v].add(u);
+            adjList[u-1].add(v-1);
+            adjList[v-1].add(u-1);
         }
         int resultCnt = 0; // 연결 요소 개수
         for (int i = 0; i < N; i++) {
