@@ -16,7 +16,7 @@ public class ConnectedComponent {
         StringTokenizer str = new StringTokenizer(br.readLine(), " ");
 
         int N = Integer.parseInt(str.nextToken()); // 노드 개수
-        int M = Integer.parseInt(str.nextToken()); // 에지 개수
+        int M = Integer.parseInt(str.nextToken()); // 간선 개수
         adjList = new ArrayList[N];
         visited = new boolean[N];
 
@@ -25,7 +25,16 @@ public class ConnectedComponent {
             adjList[i] = new ArrayList<Integer>();
         }
 
-        str = new StringTokenizer(br.readLine(), " ");
+        for (int i = 0; i < M; i++) {
+            str = new StringTokenizer(br.readLine(), " ");
+            int u = Integer.parseInt(str.nextToken()); // 간선의 양 끝점 노드
+            int v = Integer.parseInt(str.nextToken()); // 간선의 양 끝점 노드
+
+            // 무방향 그래프이므로, 양쪽 방향을 전부 add
+            adjList[u].add(v);
+            adjList[v].add(u);
+        }
+
 
     }
 }
