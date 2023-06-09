@@ -1,4 +1,4 @@
-package haruCoding;
+package haruCoding.Sorting;
 
 import java.io.*;
 
