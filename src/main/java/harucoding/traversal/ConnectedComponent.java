@@ -34,7 +34,24 @@ public class ConnectedComponent {
             adjList[u].add(v);
             adjList[v].add(u);
         }
+        int resultCnt = 0; // 연결 요소 개수
+        for (int i = 0; i < N; i++) {
+            if (!visited[i]) { // 방문하지 않았던 노드인 경우(아직 false 인 경우)
+                resultCnt++;
+                DFS(i);
+            }
+        }
+    }
 
-
+    private static void DFS(int i) {
+        if (visited[i]) { // 방문했던 노드인 경우(true 인 경우)
+            return;
+        }
+        visited[i] = true; // 방문 했음 체크 완료(false -> true)
+        for (int j = 0; j < adjList.length; j++) {
+            if (!visited[i]) {
+                DFS(i); // 재귀 호출
+            }
+        }
     }
 }
