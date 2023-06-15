@@ -24,6 +24,20 @@ public class FindInteger {
             str = new StringTokenizer(br.readLine(), " ");
             int target = Integer.parseInt(str.nextToken());
 
+            int start = 0; // 시작 인덱스
+            int end = A.length - 1; // 마지막 인덱스
+            while (start <= end) { // 이진 탐색
+                int mid = (start + end) / 2; // 중앙값
+                if (mid > target) {
+                    end = mid - 1; // 좌측 집합의 end - 1
+                } else if (mid < target) {
+                    start = mid + 1; // 우측 집합의 start + 1
+                } else {
+                    return;
+                }
+
+            }
+
         }
 
     }
