@@ -19,5 +19,12 @@ public class FindInteger {
         }
         Arrays.sort(A);
 
+        int M = Integer.parseInt(br.readLine());
+        for (int i = 0; i < M; i++) {
+            str = new StringTokenizer(br.readLine(), " ");
+            int target = Integer.parseInt(str.nextToken());
+
+        }
+
     }
 }
