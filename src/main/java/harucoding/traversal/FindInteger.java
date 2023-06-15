@@ -3,6 +3,7 @@ package harucoding.traversal;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 1920
@@ -16,6 +17,7 @@ public class FindInteger {
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(str.nextToken());
         }
+        Arrays.sort(A);
 
     }
 }
