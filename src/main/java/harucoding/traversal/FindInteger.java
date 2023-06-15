@@ -37,6 +37,7 @@ public class FindInteger {
                     start = mid + 1; // 우측 집합의 start + 1
                 } else {
                     result = true; // A[]에 target 값 존재
+                    break;
                 }
             }
             if (result) {
