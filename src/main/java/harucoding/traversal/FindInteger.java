@@ -23,6 +23,7 @@ public class FindInteger {
         for (int i = 0; i < M; i++) {
             str = new StringTokenizer(br.readLine(), " ");
             int target = Integer.parseInt(str.nextToken());
+            boolean result = false;
 
             int start = 0; // 시작 인덱스
             int end = A.length - 1; // 마지막 인덱스
@@ -33,12 +34,14 @@ public class FindInteger {
                 } else if (mid < target) {
                     start = mid + 1; // 우측 집합의 start + 1
                 } else {
-                    return;
+                    result = true; // A[]에 target 값 존재
                 }
-
             }
-
+            if (result) {
+                System.out.println(1);
+            } else {
+                System.out.println(0);
+            }
         }
-
     }
 }
