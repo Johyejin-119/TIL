@@ -18,8 +18,8 @@ public class SearchMaze {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer str = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(str.nextToken());
-        int M = Integer.parseInt(str.nextToken());
+        N = Integer.parseInt(str.nextToken());
+        M = Integer.parseInt(str.nextToken());
         arrMaze = new int[N][M];
         visited = new boolean[N][M];
 
@@ -51,7 +51,7 @@ public class SearchMaze {
                     if (!visited[x][y] && arrMaze[x][y] != 0) { // 방문하지 않음 && 1인 구간인 경우
                         visited[x][y] = true;
                         arrMaze[x][y] = arrMaze[pre[0]][pre[1]] + 1; // 현재값 + 1
-                        queue.offer(new int[] {x, y});
+                        queue.add(new int[] {x, y});
                     }
                 }
 
