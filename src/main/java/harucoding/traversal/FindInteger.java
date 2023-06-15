@@ -20,8 +20,8 @@ public class FindInteger {
         Arrays.sort(A);
 
         int M = Integer.parseInt(br.readLine());
+        str = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < M; i++) {
-            str = new StringTokenizer(br.readLine(), " ");
             int target = Integer.parseInt(str.nextToken());
             boolean result = false;
 
@@ -46,5 +46,6 @@ public class FindInteger {
                 System.out.println(0);
             }
         }
+        br.close();
     }
 }
