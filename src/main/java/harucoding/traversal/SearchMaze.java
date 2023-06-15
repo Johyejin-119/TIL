@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 // 2178
 public class SearchMaze {
     static int[] de_x = {0, 1, 0, -1};
-    static int[] de_y = {0, 1, 0, -1};
+    static int[] de_y = {1, 0, -1, 0};
     static int[][] arrMaze; // 미로
     static int N, M; // 미로 크기
     static boolean[][] visited; // 방문 여부
