@@ -45,6 +45,15 @@ public class SearchMaze {
             for (int i = 0; i < 4; i++) { // 사방 탐색
                 int x = pre[0] + de_x[i]; // 현재 값 + 0
                 int y = pre[1] + de_y[i]; // 현재 값 + 1 == 아래로 한 칸 이동
+
+                if ((x >= 0 && y >= 0) && (x < N && y < M)) { // 이동한 값이 미로 안인 경우
+                    if (!visited[x][y] && arrMaze[x][y] != 0) { // 방문하지 않음 && 1인 구간인 경우
+                        visited[x][y] = true;
+                        arrMaze[x][y] = arrMaze[pre[0]][pre[1]] + 1; // 현재값 + 1
+                        queue.offer(new int[] {x, y});
+                    }
+                }
+
             }
         }
     }
