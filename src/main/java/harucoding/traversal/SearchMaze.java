@@ -32,6 +32,7 @@ public class SearchMaze {
 
         }
         BFS(0, 0);
+        System.out.println(arrMaze[N-1][M-1]);
     }
 
     private static void BFS(int a, int b) {
