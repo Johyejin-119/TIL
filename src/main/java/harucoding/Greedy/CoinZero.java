@@ -27,5 +27,6 @@ public class CoinZero {
                 K = K % coins[i]; // 목표 가격까지 남은 금액
             }
         }
+        System.out.println(cnt);
     }
 }
