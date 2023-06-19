@@ -19,5 +19,13 @@ public class CoinZero {
             coins[i] = Integer.parseInt(br.readLine());
         }
         br.close();
+
+        int cnt = 0;
+        for (int i = N-1; i >= 0; i--) { // 가장 큰 동전부터 역순 탐색
+            if (coins[i] <= K) {
+                cnt += K / coins[i]; // 사용한 동전 개수
+                K = K % coins[i]; // 목표 가격까지 남은 금액
+            }
+        }
     }
 }
