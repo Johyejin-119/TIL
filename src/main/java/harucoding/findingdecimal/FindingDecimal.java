@@ -18,5 +18,11 @@ public class FindingDecimal {
         for (int i = 1; i < decimal.length; i++) {
             decimal[i] = i;           
         }
+        for (int i = 2; i <= Math.sqrt(N); i++) { // 에라토스테네스의 체
+            if (decimal[i] == 0) continue; // 이미 소수가 아닌 경우
+            for (int j = i + i; j <= N; j = j + i) { // 현재 소수의 배수 값 찾기(+i)
+                decimal[j] = 0; // 소수가 아님을 표시
+            }
+        }
     }
 }
