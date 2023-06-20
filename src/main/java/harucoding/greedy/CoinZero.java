@@ -1,4 +1,4 @@
-package harucoding.Greedy;
+package harucoding.greedy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
