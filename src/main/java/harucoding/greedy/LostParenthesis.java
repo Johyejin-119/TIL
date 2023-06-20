@@ -20,7 +20,7 @@ public class LostParenthesis {
                 result -= sum_result;
             }
         }
-
+        System.out.println(result);
     }
 
     private static int Sum(String input) {
