@@ -14,6 +14,11 @@ public class LostParenthesis {
         String[] input = ex.split("-"); // -기준으로 수식 분할
         for (int i = 0; i < input.length; i++) {
             int sum_result = Sum(input[i]); // 분할된 수식 내 +연산만 수행
+            if (i == 0) {
+                result += sum_result;
+            } else {
+                result -= sum_result;
+            }
         }
 
     }
