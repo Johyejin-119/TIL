@@ -25,7 +25,7 @@ public class LostParenthesis {
 
     private static int Sum(String input) {
         int plus = 0;
-        String[] sumInput = input.split("'+'"); // +기준으로 수식 분할
+        String[] sumInput = input.split("\\+"); // +기준으로 수식 분할
         for (int i = 0; i < sumInput.length; i++) {
             plus += Integer.parseInt(sumInput[i]); // 분할된 수식 더하기
         }
