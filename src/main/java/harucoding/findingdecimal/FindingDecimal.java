@@ -24,5 +24,8 @@ public class FindingDecimal {
                 decimal[j] = 0; // 소수가 아님을 표시
             }
         }
+        for (int i = M; i <= N; i++) {
+            if (decimal[i] != 0) System.out.println(decimal[i]);
+        }
     }
 }
