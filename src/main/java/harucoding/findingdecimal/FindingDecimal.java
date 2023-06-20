@@ -15,7 +15,7 @@ public class FindingDecimal {
         br.close();
         
         int[] decimal = new int[N + 1];
-        for (int i = 1; i < decimal.length; i++) {
+        for (int i = 2; i < decimal.length; i++) {
             decimal[i] = i;           
         }
         for (int i = 2; i <= Math.sqrt(N); i++) { // 에라토스테네스의 체
