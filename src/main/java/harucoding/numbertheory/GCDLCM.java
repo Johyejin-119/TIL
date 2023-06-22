@@ -15,6 +15,8 @@ public class GCDLCM {
         int B = Integer.parseInt(str.nextToken());
 
         int result = GCD(A, B);
+        System.out.println(result); // 최대공약수
+        System.out.println(A * B / result); // 최소공배수
     }
 
     private static int GCD(int a, int b) { // 유클리드 호제법으로 최대공약수 구하기
