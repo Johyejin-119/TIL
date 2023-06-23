@@ -41,6 +41,14 @@ public class BipartiteGraph {
                 gData[start].add(end);
                 gData[end].add(start);
             }
+
+            for (int j = 1; j <= N; j++) { // 노드별 DFS 실행 -> 이분 그래프 판별
+                if (result) { // 이분 그래프인 경우
+                    //DFS();
+                } else {
+                    break;
+                }
+            }
         }
     }
 }
