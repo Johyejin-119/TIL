@@ -44,7 +44,7 @@ public class BipartiteGraph {
 
             for (int j = 1; j <= N; j++) { // 노드별 DFS 실행 -> 이분 그래프 판별
                 if (result) { // 이분 그래프인 경우
-                    DFS(1);
+                    DFS(j);
                 } else {
                     break;
                 }
