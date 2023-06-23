@@ -44,7 +44,7 @@ public class BipartiteGraph {
 
             for (int j = 1; j <= N; j++) { // 노드별 DFS 실행 -> 이분 그래프 판별
                 if (result) { // 이분 그래프인 경우
-                    //DFS();
+                    DFS(1);
                 } else {
                     break;
                 }
@@ -54,6 +54,20 @@ public class BipartiteGraph {
                 System.out.println("YES");
             } else {
                 System.out.println("NO");
+            }
+        }
+    }
+
+    private static void DFS(int n) {
+        visited[n] = true; // 시작 노드 n
+        for (Integer i : gData[n]) {
+            if (!visited[i]) { // 연결된 현재 노드가 방문한 노드가 아닌 경우
+                check[i] = (check[n] + 1) % 2; // 현재 노드 check[i]는 바로 직전 노드 check[n]와 다른 집합으로 분류
+                DFS(i);
+            } else {
+                if (check[i] == check[n]) { // 인접한 두 노드가 같은 집합인 경우
+                    result = false; // 이분 그래프 NO
+                }
             }
         }
     }
