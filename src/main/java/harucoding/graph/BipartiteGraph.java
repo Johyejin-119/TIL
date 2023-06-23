@@ -32,6 +32,15 @@ public class BipartiteGraph {
                 gData[j] = new ArrayList<Integer>();
             }
 
+            for (int j = 0; j < E; j++) { // 그래프 데이터 저장(에지 기준 시작 노드-끝 노드)
+                str = new StringTokenizer(br.readLine(), " ");
+                int start = Integer.parseInt(str.nextToken()); // 시작 노드
+                int end = Integer.parseInt(str.nextToken()); // 끝 노드
+
+                // 무방향 그래프이므로 양쪽 전부 add
+                gData[start].add(end);
+                gData[end].add(start);
+            }
         }
     }
 }
