@@ -49,6 +49,12 @@ public class BipartiteGraph {
                     break;
                 }
             }
+
+            if (result) { // 마지막까지 이분 그래프인 경우
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
         }
     }
 }
