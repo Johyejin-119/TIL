@@ -56,6 +56,7 @@ public class BipartiteGraph {
                 System.out.println("NO");
             }
         }
+        br.close();
     }
 
     private static void DFS(int n) {
