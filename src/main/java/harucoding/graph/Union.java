@@ -45,4 +45,11 @@ public class Union {
             return node[index] = find(node[index]); // value 를 index 로 바꿔서 재귀적으로 찾기 -> 찾은 대표 노드 값으로 업데이트
         }
     }
+
+    private static boolean checkResult(int a, int b) { // 대표 노드가 같은 지 확인하기
+        a = find(a);
+        b = find(b);
+        if (a == b) return true;
+        return false;
+    }
 }
