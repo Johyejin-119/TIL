@@ -7,12 +7,13 @@ import java.util.StringTokenizer;
 
 // 1717
 public class Union {
+    static int[] node;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer str = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(str.nextToken()); // 노드 개수
         int M = Integer.parseInt(str.nextToken()); // 질의 개수
-        int[] node = new int[N + 1]; // 노드 저장 배열
+        node = new int[N + 1]; // 노드 저장 배열
         for (int i = 0; i < N + 1; i++) {
             node[i] = i;
         }
@@ -27,6 +28,18 @@ public class Union {
             } else {
 
             }
+        }
+    }
+
+    private static void union(int a, int b) { // 대표 노드끼리 연결하기
+        a = find(a);
+        b = find(b);
+    }
+
+    private static int find(int index) { // 대표 노드 찾기
+        if (index == node[index]) return index; // 배열의 index 와 value 가 일치
+        else {
+            return find(node[index]); // value 를 index 로 바꿔서 재귀적으로 찾기
         }
     }
 }
