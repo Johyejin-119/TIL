@@ -34,6 +34,9 @@ public class Union {
     private static void union(int a, int b) { // 대표 노드끼리 연결하기
         a = find(a);
         b = find(b);
+        if (a != b) { // 대표 노드가 다른 경우
+            node[b] = a; // 두 노드 연결하기(합집합)
+        }
     }
 
     private static int find(int index) { // 대표 노드 찾기
