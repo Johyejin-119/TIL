@@ -39,7 +39,7 @@ public class Union {
     private static int find(int index) { // 대표 노드 찾기
         if (index == node[index]) return index; // 배열의 index 와 value 가 일치
         else {
-            return find(node[index]); // value 를 index 로 바꿔서 재귀적으로 찾기
+            return node[index] = find(node[index]); // value 를 index 로 바꿔서 재귀적으로 찾기 -> 찾은 대표 노드 값으로 업데이트
         }
     }
 }
