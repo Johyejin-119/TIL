@@ -23,10 +23,15 @@ public class Union {
             int a = Integer.parseInt(str.nextToken()); // 노드
             int b = Integer.parseInt(str.nextToken()); // 노드
 
-            if (type == 0) { // 합집합 union
+            if (type == 0) { // 합집합 union 연산 수행 -> 두 노드 연결
                 union(a, b);
-            } else {
-
+            } else { // 두 노드의 합집합 판별
+                boolean re = checkResult(a, b);
+                if (re) {
+                    System.out.println("YES");
+                } else {
+                    System.out.println("NO");
+                }
             }
         }
     }
