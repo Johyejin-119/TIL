@@ -54,7 +54,6 @@ public class Union {
     private static boolean checkResult(int a, int b) { // 대표 노드가 같은 지 확인하기
         a = find(a);
         b = find(b);
-        if (a == b) return true;
-        return false;
+        return a == b;
     }
 }
