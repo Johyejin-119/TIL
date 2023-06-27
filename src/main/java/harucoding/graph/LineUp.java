@@ -19,7 +19,7 @@ public class LineUp {
         ArrayList<ArrayList<Integer>> data = new ArrayList<>(); // 인접 리스트
         int indegree[] = new int[N + 1]; // 진입 차수
 
-        for (int i = 1; i <= N; i++) { // 인접 리스트 초기화
+        for (int i = 0; i <= N; i++) { // 인접 리스트 초기화
             data.add(new ArrayList<>());
         }
         for (int i = 0; i < M; i++) {
