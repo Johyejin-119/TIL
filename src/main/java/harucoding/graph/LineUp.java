@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 // 2252
@@ -19,6 +21,13 @@ public class LineUp {
 
         for (int i = 1; i <= N; i++) { // 인접 리스트 초기화
             data.add(new ArrayList<>());
+        }
+        for (int i = 0; i < M; i++) {
+            str = new StringTokenizer(br.readLine());
+            int start = Integer.parseInt(str.nextToken()); // 학생 A 번호
+            int end = Integer.parseInt(str.nextToken()); // 학생 B 번호
+            data.get(start).add(end); // 인접 리스트 데이터 저장
+            indegree[end]++; // A부터 출력시키기 위해, B의 진입 차수 배열을 ++
         }
 
     }
