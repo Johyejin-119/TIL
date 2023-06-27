@@ -40,6 +40,13 @@ public class LineUp {
             int pre = queue.poll(); // 현재 노드
             System.out.print(pre + " ");
 
+            for (int target : data.get(pre)) { // 현재 노드의 인접 노드들(target)
+                indegree[target]--; // 진입 차수 감소
+                if (indegree[target] == 0) {
+                    queue.offer(target);
+                }
+            }
+
         }
 
     }
