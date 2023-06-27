@@ -36,6 +36,11 @@ public class LineUp {
                 queue.offer(i); // 진입 차수 0인 노드부터 위상 정렬 수행
             }
         }
+        while (!queue.isEmpty()) {
+            int pre = queue.poll(); // 현재 노드
+            System.out.print(pre + " ");
+
+        }
 
     }
 }
