@@ -33,7 +33,7 @@ public class LineUp {
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 1; i <= N; i++) {
             if (indegree[i] == 0) { // 진입 차수가 0인 노드
-                queue.offer(i);
+                queue.offer(i); // 진입 차수 0인 노드부터 위상 정렬 수행
             }
         }
 
