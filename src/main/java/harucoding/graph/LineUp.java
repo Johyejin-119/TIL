@@ -30,5 +30,12 @@ public class LineUp {
             indegree[end]++; // A부터 출력시키기 위해, B의 진입 차수 배열을 ++
         }
 
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 1; i <= N; i++) {
+            if (indegree[i] == 0) { // 진입 차수가 0인 노드
+                queue.offer(i);
+            }
+        }
+
     }
 }
