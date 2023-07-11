@@ -57,9 +57,14 @@ public class ShortestRoute {
             if (visited[pre]) continue;
             visited[pre] = true;
 
-
+            for (Node node : gList.get(pre)) {
+                // 방문한 적 없는 노드 && (pre 노드의 최단 거리 배열 값 + pre 노드의 연결 노드의 가중치 < pre 노드의 연결 노드의 최단 거리 배열 값)
+                if (!visited[node.end] && (distance[pre] + node.weight < distance[node.end])) {
+                    distance[node.end] = distance[pre] + node.weight; // 값 업데이트
+                    pQueue.add(new Node(node.end, distance[node.end]));
+                }
+            }
         }
-
     }
 
     private static class Node implements Comparable<Node> {
