@@ -27,14 +27,13 @@ public class ShortestRoute {
         }
         Arrays.fill(distance, INF); // 최단 거리 배열 초기화
 
-
-
         for (int i = 0; i < E; i++) {
             str = new StringTokenizer(br.readLine(), " ");
             int u = Integer.parseInt(str.nextToken()); // 간선 좌측
             int v = Integer.parseInt(str.nextToken()); // 간선 우측
             int w = Integer.parseInt(str.nextToken()); // 가중치
 
+            gList.get(u).add(new Node(v, w)); // 간선 정보(end, 가중치)를 인접 리스트에 저장
         }
 
 
