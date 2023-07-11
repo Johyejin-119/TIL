@@ -17,7 +17,7 @@ public class ShortestRoute {
 
         int V = Integer.parseInt(str.nextToken()); // 정점 개수
         int E = Integer.parseInt(str.nextToken()); // 간선 개수
-        int K = Integer.parseInt(br.readLine()); // 정점 번호
+        int K = Integer.parseInt(br.readLine()); // 시작 정점 번호
         int INF = Integer.MAX_VALUE;
         gList = new ArrayList<>();
         distance = new int[V + 1];
@@ -35,6 +35,8 @@ public class ShortestRoute {
 
             gList.get(s).add(new Node(e, w)); // 간선 정보(end, 가중치)를 인접 리스트에 저장
         }
+
+        dijkstra(K);
 
 
     }
