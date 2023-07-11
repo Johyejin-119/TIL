@@ -29,11 +29,11 @@ public class ShortestRoute {
 
         for (int i = 0; i < E; i++) {
             str = new StringTokenizer(br.readLine(), " ");
-            int u = Integer.parseInt(str.nextToken()); // 간선 좌측
-            int v = Integer.parseInt(str.nextToken()); // 간선 우측
+            int s = Integer.parseInt(str.nextToken()); // 간선 시작점
+            int e = Integer.parseInt(str.nextToken()); // 간선 끝점
             int w = Integer.parseInt(str.nextToken()); // 가중치
 
-            gList.get(u).add(new Node(v, w)); // 간선 정보(end, 가중치)를 인접 리스트에 저장
+            gList.get(s).add(new Node(e, w)); // 간선 정보(end, 가중치)를 인접 리스트에 저장
         }
 
 
