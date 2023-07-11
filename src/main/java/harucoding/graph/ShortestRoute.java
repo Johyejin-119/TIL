@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 1753
@@ -24,6 +25,9 @@ public class ShortestRoute {
         for (int i = 1; i <= V; i++) { // 인접 리스트 초기화
             gList.add(new ArrayList<>());
         }
+        Arrays.fill(distance, INF); // 최단 거리 배열 초기화
+
+
 
         for (int i = 0; i < E; i++) {
             str = new StringTokenizer(br.readLine(), " ");
