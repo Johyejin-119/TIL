@@ -49,6 +49,16 @@ public class ShortestRoute {
         pQueue.add(new Node(start, 0)); // 최초 시작점을 우선순위 큐에 삽입
         distance[start] = 0; // 최단 거리 배열의 첫 출발 노드는 0으로 초기화
 
+        while (!pQueue.isEmpty()) {
+            Node preNode = pQueue.poll(); // 현재 시작 노드
+            int pre = preNode.end; // 탐색할 현재 노드
+
+            // 현재 노드 방문 여부 체크
+            if (visited[pre]) continue;
+            visited[pre] = true;
+
+
+        }
 
     }
 
