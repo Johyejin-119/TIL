@@ -23,7 +23,7 @@ public class ShortestRoute {
         gList = new ArrayList<>();
         distance = new int[V + 1];
 
-        for (int i = 1; i <= V; i++) { // 인접 리스트 초기화
+        for (int i = 0; i <= V; i++) { // 인접 리스트 초기화
             gList.add(new ArrayList<>());
         }
         Arrays.fill(distance, INF); // 최단 거리 배열 초기화
