@@ -39,8 +39,12 @@ public class ShortestRoute {
 
         dijkstra(K, V); // 시작 정점, 정점 개수
 
-
-
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= V ; i++) {
+            if (distance[i] == INF) sb.append("INF").append("\n");
+            else sb.append(distance[i]).append("\n");
+        }
+        System.out.println(sb);
     }
 
     private static void dijkstra(int start, int v) {
