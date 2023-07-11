@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 // 1753
@@ -36,7 +37,17 @@ public class ShortestRoute {
             gList.get(s).add(new Node(e, w)); // 간선 정보(end, 가중치)를 인접 리스트에 저장
         }
 
-        dijkstra(K);
+        dijkstra(K, V); // 시작 정점, 정점 개수
+
+
+
+    }
+
+    private static void dijkstra(int start, int v) {
+        PriorityQueue<Node> pQueue = new PriorityQueue<Node>();
+        boolean visited[] = new boolean[v + 1]; // 방문 배열
+        pQueue.add(new Node(start, 0)); // 최초 시작점을 우선순위 큐에 삽입
+        distance[start] = 0; // 최단 거리 배열의 첫 출발 노드는 0으로 초기화
 
 
     }
