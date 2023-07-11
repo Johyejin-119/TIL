@@ -36,4 +36,19 @@ public class ShortestRoute {
 
     }
 
+    private static class Node implements Comparable<Node> {
+        int end;
+        int weight;
+
+        public Node(int end, int weight) {
+            this.end = end;
+            this.weight = weight;
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            return weight - o.weight; // 현재 노드의 가중치 값과 연결된 노드의 가중치 값을 비교
+        }
+
+    }
 }
