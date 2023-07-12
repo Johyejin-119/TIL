@@ -33,6 +33,19 @@ public class Wormhole {
             int INF = Integer.MAX_VALUE;
             Arrays.fill(dist, INF); // 최단 거리 배열 초기화
 
+            for (int j = 0; j < M + W; j++) {
+                str = new StringTokenizer(br.readLine());
+                int s = Integer.parseInt(str.nextToken()); // 시작 노드
+                int e = Integer.parseInt(str.nextToken()); // 끝 노드
+                int weight = Integer.parseInt(str.nextToken()); // 가중치
+
+                if (j < M) { // 도로 - 양방향, 음수X
+                    gData.get(s).add(new Node(e, weight));
+                    gData.get(e).add(new Node(s, weight));
+                } else { // 웜홀 - 단방향, 음수O
+                    gData.get(s).add(new Node(e, -weight));
+                }
+            }
 
         }
     }
