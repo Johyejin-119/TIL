@@ -23,6 +23,8 @@ public class Wormhole {
             N = Integer.parseInt(str.nextToken()); // 노드 수
             M = Integer.parseInt(str.nextToken()); // 에지 수
             W = Integer.parseInt(str.nextToken()); // 에지 수(음수 존재)
+            gData = new ArrayList<>();
+            dist = new int[N + 1];
 
             for (int j = 0; j <= N ; j++) { // 에지 정보 리스트 초기화
                 gData.add(new ArrayList<>());
