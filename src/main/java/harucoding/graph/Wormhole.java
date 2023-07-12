@@ -46,8 +46,23 @@ public class Wormhole {
                     gData.get(s).add(new Node(e, -weight));
                 }
             }
+            boolean cycleCheck = false; // 음수 사이클 체크
+            for (int j = 1; j <= N; j++) {
+                if (bellmanFord(i)) { // 음수 사이클 있음
+                    cycleCheck = true;
+                    System.out.println("YES");
+                    break;
+                }
+            }
+            if (!cycleCheck) { // 음수 사이클 없음
+                System.out.println("NO");
+            }
 
         }
+    }
+
+    private static boolean bellmanFord(int node) {
+        return false;
     }
 
     private static class Node {
