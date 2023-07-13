@@ -78,6 +78,17 @@ public class Wormhole {
             }
             if (!upCheck) break; // 더 이상 갱신할 최단 거리 값이 없는 경우
         }
+        
+        if (upCheck) {
+            for (int i = 1; i <= N; i++) { // '노드 수'만큼 최단 거리 값 갱신되는 경우 == 음수 사이클 발생
+                for (Node pre : gData.get(i)) {
+                    if (dist[i] != INF && dist[i] + pre.weight < dist[pre.end]) {
+                        dist[pre.end] = dist[i] + pre.weight;
+                        return true; // 음수 사이클 발생(YES)
+                    }
+                }
+            }
+        }
         return false;
     }
 
