@@ -49,7 +49,7 @@ public class Wormhole {
             }
             boolean cycleCheck = false; // 음수 사이클 체크
             for (int j = 1; j <= N; j++) {
-                if (bellmanFord(i)) { // 음수 사이클 있음
+                if (bellmanFord(j)) { // 음수 사이클 있음
                     cycleCheck = true;
                     sb.append("YES").append("\n");
                     break;
