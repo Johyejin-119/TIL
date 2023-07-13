@@ -62,6 +62,22 @@ public class Wormhole {
     }
 
     private static boolean bellmanFord(int node) {
+        dist[node] = 0; // 첫 시작 노드 초기화
+        boolean upCheck = false; // 최단 거리 dist 갱신 여부
+        int INF = Integer.MAX_VALUE;
+
+        for (int i = 1; i <= N - 1; i++) { // '노드 수 -1', 에지 사용 횟수만큼 최단 거리 구하기
+            upCheck = false;
+            for (int j = 1; j <= N; j++) { // 모든 에지 순회
+                for (Node pre : gData.get(j)) {
+                    if (dist[j] != INF && dist[j] + pre.weight < dist[pre.end]) {
+                        dist[pre.end] = dist[j] + pre.weight;
+                        upCheck = true; // 최단 거리 값 갱신
+                    }
+                }
+            }
+            if (!upCheck) break; // 더 이상 갱신할 최단 거리 값이 없는 경우
+        }
         return false;
     }
 
