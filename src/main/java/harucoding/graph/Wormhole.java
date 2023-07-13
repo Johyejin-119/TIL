@@ -12,6 +12,7 @@ public class Wormhole {
     static ArrayList<ArrayList<Node>> gData;    // 에지 정보 리스트
     static int dist[];                          // 최단 거리 배열
     static int N, M, W;                         // 노드 수, 도로 수, 웜홀 수
+    static final int INF = Integer.MAX_VALUE;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,7 +32,6 @@ public class Wormhole {
                 gData.add(new ArrayList<>());
             }
 
-            int INF = Integer.MAX_VALUE;
             Arrays.fill(dist, INF); // 최단 거리 배열 초기화
 
             for (int j = 0; j < M + W; j++) {
@@ -66,7 +66,6 @@ public class Wormhole {
     private static boolean bellmanFord(int node) {
         dist[node] = 0; // 첫 시작 노드 초기화
         boolean upCheck = false; // 최단 거리 dist 갱신 여부
-        int INF = Integer.MAX_VALUE;
 
         for (int i = 1; i <= N - 1; i++) { // '노드 수 -1', 에지 사용 횟수만큼 최단 거리 구하기
             upCheck = false;
