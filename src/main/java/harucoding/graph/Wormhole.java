@@ -18,6 +18,7 @@ public class Wormhole {
 
         int TC = Integer.parseInt(br.readLine()); // 테스트 케이스 수
         StringTokenizer str;
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < TC; i++) {
             str = new StringTokenizer(br.readLine());
             N = Integer.parseInt(str.nextToken()); // 노드 수
@@ -50,15 +51,16 @@ public class Wormhole {
             for (int j = 1; j <= N; j++) {
                 if (bellmanFord(i)) { // 음수 사이클 있음
                     cycleCheck = true;
-                    System.out.println("YES");
+                    sb.append("YES").append("\n");
                     break;
                 }
             }
             if (!cycleCheck) { // 음수 사이클 없음
-                System.out.println("NO");
+                sb.append("NO").append("\n");
             }
-
         }
+        System.out.println(sb);
+        br.close();
     }
 
     private static boolean bellmanFord(int node) {
