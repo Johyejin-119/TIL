@@ -3,6 +3,7 @@ package harucoding.graph;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 // 11404
 public class Floyd {
@@ -18,6 +19,17 @@ public class Floyd {
                 arrCity[i][j] = INF;
                 if (i == j) arrCity[i][j] = 0; // 시작 노드 == 도착 노드 -> 0으로 초기화
             }
+        }
+
+        StringTokenizer str;
+        for (int i = 0; i < M; i++) {
+            str = new StringTokenizer(br.readLine());
+            int s = Integer.parseInt(str.nextToken()); // 시작 노드
+            int e = Integer.parseInt(str.nextToken()); // 도착 노드
+            int w = Integer.parseInt(str.nextToken()); // 가중치
+
+            // 시작-도착 노드가 같을 때 여러 가중치들 중, 가장 작은 값을 저장
+            arrCity[s][e] = Math.min(arrCity[s][e], w);
         }
     }
 }
