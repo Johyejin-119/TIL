@@ -35,6 +35,16 @@ public class Floyd {
             arrCity[s][e] = Math.min(arrCity[s][e], w);
         }
         FindPath(); // 최단 경로 찾기
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N; j++) {
+                if (arrCity[i][j] == INF){ arrCity[i][j] = 0; }
+                sb.append(arrCity[i][j]).append(" ");
+            }
+            sb.append("\n");
+        }
+        System.out.println(sb);
     }
 
     private static void FindPath() { // 플로이드-워셜 알고리즘
