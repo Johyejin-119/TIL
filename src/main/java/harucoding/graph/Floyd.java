@@ -48,9 +48,9 @@ public class Floyd {
     }
 
     private static void FindPath() { // 플로이드-워셜 알고리즘
-        for (int k = 0; k < N; k++) {
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < N; j++) {
+        for (int k = 1; k <= N; k++) {
+            for (int i = 1; i <= N; i++) {
+                for (int j = 1; j <= N; j++) {
                     // i -> j로 가는 모든 경유지들 k중, 최단 경로 값으로 업데이트
                     if (arrCity[i][j] > arrCity[i][k] + arrCity[k][j]) {
                         arrCity[i][j] = arrCity[i][k] + arrCity[k][j];
