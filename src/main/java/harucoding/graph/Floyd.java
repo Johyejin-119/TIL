@@ -7,11 +7,14 @@ import java.util.StringTokenizer;
 
 // 11404
 public class Floyd {
+    static int N;
+    static int M;
+    static int[][] arrCity;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine()); // 노드 수
-        int M = Integer.parseInt(br.readLine()); // 에지 수
-        int[][] arrCity = new int[N + 1][N + 1]; // 최단 거리 리스트
+        N = Integer.parseInt(br.readLine()); // 노드 수
+        M = Integer.parseInt(br.readLine()); // 에지 수
+        arrCity = new int[N + 1][N + 1]; // 최단 거리 리스트
 
         int INF = Integer.MAX_VALUE;
         for (int i = 1; i <= N; i++) { // 최단 거리 리스트 초기화
@@ -30,6 +33,20 @@ public class Floyd {
 
             // 시작-도착 노드가 같을 때 여러 가중치들 중, 가장 작은 값을 저장
             arrCity[s][e] = Math.min(arrCity[s][e], w);
+        }
+        FindPath(); // 최단 경로 찾기
+    }
+
+    private static void FindPath() { // 플로이드-워셜 알고리즘
+        for (int k = 0; k < N; k++) {
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    // i -> j로 가는 모든 경유지들 k중, 최단 경로 값으로 업데이트
+                    if (arrCity[i][j] > arrCity[i][k] + arrCity[k][j]) {
+                        arrCity[i][j] = arrCity[i][k] + arrCity[k][j];
+                    }
+                }
+            }
         }
     }
 }
