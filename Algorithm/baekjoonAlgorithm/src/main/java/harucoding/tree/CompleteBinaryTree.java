@@ -27,6 +27,15 @@ public class CompleteBinaryTree {
             list.add(new ArrayList<>());
         }
         solve(0, treeArr.length - 1, 0); // 완전 이진 트리 탐색
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < k; i++) {
+            for (int node : list.get(i)) {
+                sb.append(node).append(" ");
+            }
+            sb.append("\n");
+        }
+        System.out.println(sb);
     }
 
     private static void solve(int s, int e, int depth) {
